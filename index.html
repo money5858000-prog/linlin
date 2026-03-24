@@ -9,118 +9,147 @@
         .gradient-bg {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
         }
+        .form-input:focus {
+            border-color: #3b82f6;
+            ring-color: #3b82f6;
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
 
     <!-- Header -->
     <header class="gradient-bg text-white py-12 px-6 text-center shadow-lg">
-        <h1 class="text-3xl md:text-4xl font-extrabold mb-4">【誠信週轉】您的資金後援</h1>
-        <p class="text-lg text-blue-100">在地經營，透明流程，保障債權與債務雙方利益</p>
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">【誠信週轉】您的資金後援</h1>
+            <p class="text-lg text-blue-100 opacity-90">在地經營，透明流程，保障債權與債務雙方利益</p>
+        </div>
     </header>
 
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto -mt-8 px-4 pb-12">
-        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10">
+        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-gray-100">
             
             <!-- Features Section -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-center">
-                <div class="p-4 bg-blue-50 rounded-lg">
-                    <span class="text-3xl">✅</span>
-                    <h3 class="font-bold mt-2">透明流程</h3>
-                    <p class="text-sm text-gray-600">利息清清楚楚，無隱藏費用</p>
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <div class="text-3xl mb-2">📋</div>
+                    <h3 class="font-bold text-slate-800">流程透明</h3>
+                    <p class="text-xs text-gray-500 mt-1">核貸額度與利息清清楚楚</p>
                 </div>
-                <div class="p-4 bg-blue-50 rounded-lg">
-                    <span class="text-3xl">✅</span>
-                    <h3 class="font-bold mt-2">法律保障</h3>
-                    <p class="text-sm text-gray-600">合規經營，保障雙方權益</p>
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <div class="text-3xl mb-2">⚖️</div>
+                    <h3 class="font-bold text-slate-800">合法合規</h3>
+                    <p class="text-xs text-gray-500 mt-1">保障債權人與債務人權益</p>
                 </div>
-                <div class="p-4 bg-blue-50 rounded-lg">
-                    <span class="text-3xl">✅</span>
-                    <h3 class="font-bold mt-2">極速預審</h3>
-                    <p class="text-sm text-gray-600">線上自動初審，對保後速撥</p>
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <div class="text-3xl mb-2">⚡</div>
+                    <h3 class="font-bold text-slate-800">快速撥款</h3>
+                    <p class="text-xs text-gray-500 mt-1">資料齊全對保後速撥</p>
                 </div>
             </div>
 
             <!-- Form Section -->
-            <div class="border-t pt-8">
-                <h2 class="text-2xl font-bold text-center mb-6">30秒初步評估問卷</h2>
+            <div class="border-t border-gray-100 pt-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-slate-900">30秒初步評估問卷</h2>
+                    <p class="text-sm text-gray-500 mt-2">請如實填寫，加速您的審核進度</p>
+                </div>
+
                 <form id="leadForm" class="space-y-6">
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-2">1. 目前職業與現職年資？</label>
-                        <input type="text" name="job" required placeholder="例如：外送員 2年 / 傳產作業員 5年" class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500">
+                    <div class="space-y-2">
+                        <label class="block text-slate-700 font-semibold">1. 目前職業與現職年資？</label>
+                        <input type="text" name="job" required placeholder="例如：外送員 2年 / 傳產作業員 5年" 
+                            class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                     </div>
 
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-2">2. 是否領有勞保或薪轉證明？</label>
-                        <select name="income_proof" required class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500">
+                    <div class="space-y-2">
+                        <label class="block text-slate-700 font-semibold">2. 收入與保險狀況？</label>
+                        <select name="income_proof" required 
+                            class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white">
                             <option value="">請選擇</option>
-                            <option value="both">皆有</option>
-                            <option value="labor">僅有勞保</option>
-                            <option value="salary">僅有薪轉</option>
-                            <option value="none">皆無 (自營/領現)</option>
+                            <option value="有勞保+薪轉">有勞保 + 薪轉證明</option>
+                            <option value="僅有勞保">僅有勞保</option>
+                            <option value="僅有薪轉">僅有薪轉</option>
+                            <option value="皆無">皆無 (自營/領現/工班)</option>
                         </select>
                     </div>
 
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-2">3. 本次資金用途為何？</label>
-                        <input type="text" name="purpose" required placeholder="例如：家庭醫療週轉 / 創業進貨" class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500">
+                    <div class="space-y-2">
+                        <label class="block text-slate-700 font-semibold">3. 本次資金用途？</label>
+                        <input type="text" name="purpose" required placeholder="例如：醫療急用 / 生意進貨週轉" 
+                            class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                     </div>
 
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-2">4. 是否有抵押標的物？(可複選)</label>
-                        <div class="grid grid-cols-2 gap-2">
-                            <label class="flex items-center space-x-2 p-2 border rounded cursor-pointer hover:bg-gray-50">
-                                <input type="checkbox" name="asset" value="car"> <span>汽機車</span>
+                    <div class="space-y-2">
+                        <label class="block text-slate-700 font-semibold">4. 提供對保之抵押標的？(可複選)</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 border rounded-lg cursor-pointer hover:bg-blue-50 transition border-gray-200">
+                                <input type="checkbox" name="asset" value="汽機車" class="w-5 h-5 text-blue-600"> <span class="text-slate-700">汽機車</span>
                             </label>
-                            <label class="flex items-center space-x-2 p-2 border rounded cursor-pointer hover:bg-gray-50">
-                                <input type="checkbox" name="asset" value="phone"> <span>手機</span>
+                            <label class="flex items-center space-x-3 p-3 border rounded-lg cursor-pointer hover:bg-blue-50 transition border-gray-200">
+                                <input type="checkbox" name="asset" value="手機" class="w-5 h-5 text-blue-600"> <span class="text-slate-700">手機</span>
                             </label>
-                            <label class="flex items-center space-x-2 p-2 border rounded cursor-pointer hover:bg-gray-50">
-                                <input type="checkbox" name="asset" value="insurance"> <span>保單/勞保</span>
+                            <label class="flex items-center space-x-3 p-3 border rounded-lg cursor-pointer hover:bg-blue-50 transition border-gray-200">
+                                <input type="checkbox" name="asset" value="勞保保單" class="w-5 h-5 text-blue-600"> <span class="text-slate-700">勞保/保單</span>
                             </label>
-                            <label class="flex items-center space-x-2 p-2 border rounded cursor-pointer hover:bg-gray-50">
-                                <input type="checkbox" name="asset" value="other"> <span>其他</span>
+                            <label class="flex items-center space-x-3 p-3 border rounded-lg cursor-pointer hover:bg-blue-50 transition border-gray-200">
+                                <input type="checkbox" name="asset" value="其他" class="w-5 h-5 text-blue-600"> <span class="text-slate-700">其他</span>
                             </label>
                         </div>
                     </div>
 
-                    <div class="bg-red-50 p-4 rounded-lg border border-red-100">
-                        <h4 class="text-red-800 font-bold mb-2">⚠️ 誠信與法律聲明</h4>
-                        <p class="text-sm text-red-700 leading-relaxed">
-                            本公司僅與具備還款誠意之人士合作。若經查獲提供虛假身分或意圖非法侵占資本者，本公司將配合法律顧問採取追訴行動。
+                    <div class="bg-red-50 p-5 rounded-xl border border-red-100">
+                        <h4 class="text-red-800 font-bold mb-2 flex items-center">
+                            <span class="mr-2">⚠️</span> 誠信與法律重要聲明
+                        </h4>
+                        <p class="text-xs text-red-700 leading-relaxed opacity-80">
+                            本管道僅支持具備誠信與還款意願之人士。若填寫虛假身分或意圖非法侵佔本公司資本，我們將配合法律顧問採取追訴行動，絕不寬貸。
                         </p>
-                        <label class="flex items-center mt-3 space-x-2 cursor-pointer">
-                            <input type="checkbox" required class="w-4 h-4 text-red-600">
-                            <span class="text-sm font-bold text-red-800">我已閱讀並保證資料真實無誤</span>
+                        <label class="flex items-center mt-4 space-x-2 cursor-pointer group">
+                            <input type="checkbox" required class="w-5 h-5 text-red-600 rounded">
+                            <span class="text-sm font-bold text-red-800 group-hover:underline">我已詳閱並保證資料真實無誤</span>
                         </label>
                     </div>
 
-                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 text-lg">
-                        確認資料無誤，開啟 LINE 聯繫
+                    <button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-blue-700 hover:-translate-y-1 transition duration-300 text-lg flex items-center justify-center">
+                        <span>確認資料無誤，開啟 LINE 聯繫</span>
                     </button>
                 </form>
             </div>
         </div>
     </main>
 
-    <footer class="text-center text-gray-500 text-sm pb-8">
-        謹慎理財，信用至上。僅限具還款能力者申請。
+    <footer class="text-center text-gray-400 text-xs pb-12 space-y-2 px-6 leading-relaxed">
+        <p>核貸額度依個人信用狀況與擔保品價值而定 | 謹慎理財，信用至上</p>
+        <p>&copy; 2024 誠信週轉服務中心. All Rights Reserved.</p>
     </footer>
 
     <script>
         document.getElementById('leadForm').onsubmit = function(e) {
             e.preventDefault();
             
-            // 提醒使用者即將跳轉
-            const submitBtn = e.target.querySelector('button');
-            submitBtn.innerText = "正在為您連線至 LINE...";
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerHTML = `正在儲存預審資料...`;
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                // 跳轉至您的專屬 LINE 連結
-                window.location.href = "https://line.me/ti/p/t8gvkEN7jA";
-            }, 800);
+            const formData = new FormData(this);
+            
+            // 已經替換為您提供的 Google Apps Script URL
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz53HVbTVM1oQ0-WxNfpJGqPqkIL-8afMVe8k4n8I09K09Y-4Ww1y71gqNk8FOQfUV0/exec';
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    console.log('資料已存入 Excel');
+                    submitBtn.innerHTML = `連線至 LINE...`;
+                    setTimeout(() => {
+                        window.location.href = "https://line.me/ti/p/t8gvkEN7jA";
+                    }, 500);
+                })
+                .catch(error => {
+                    console.error('儲存失敗', error);
+                    // 即使失敗也讓客戶跳轉，確保不流失客戶
+                    window.location.href = "https://line.me/ti/p/t8gvkEN7jA";
+                });
         };
     </script>
 </body>
