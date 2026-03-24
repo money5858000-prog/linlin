@@ -9,10 +9,6 @@
         .gradient-bg {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
         }
-        .form-input:focus {
-            border-color: #3b82f6;
-            ring-color: #3b82f6;
-        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
@@ -133,23 +129,36 @@
             submitBtn.disabled = true;
 
             const formData = new FormData(this);
+            const params = new URLSearchParams();
             
-            // 已經替換為您提供的 Google Apps Script URL
+            const assets = [];
+            formData.getAll('asset').forEach(val => assets.push(val));
+            
+            params.append('job', formData.get('job'));
+            params.append('income_proof', formData.get('income_proof'));
+            params.append('purpose', formData.get('purpose'));
+            params.append('asset', assets.join(', '));
+
+            // 使用您提供的最新 Web App URL
             const scriptURL = 'https://script.google.com/macros/s/AKfycbz53HVbTVM1oQ0-WxNfpJGqPqkIL-8afMVe8k4n8I09K09Y-4Ww1y71gqNk8FOQfUV0/exec';
 
-            fetch(scriptURL, { method: 'POST', body: formData })
-                .then(response => {
-                    console.log('資料已存入 Excel');
-                    submitBtn.innerHTML = `連線至 LINE...`;
-                    setTimeout(() => {
-                        window.location.href = "https://line.me/ti/p/t8gvkEN7jA";
-                    }, 500);
-                })
-                .catch(error => {
-                    console.error('儲存失敗', error);
-                    // 即使失敗也讓客戶跳轉，確保不流失客戶
+            // 採用 POST 並配合 URLSearchParams
+            fetch(scriptURL, { 
+                method: 'POST', 
+                mode: 'no-cors', // 解決大多數跨網域問題
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: params.toString()
+            })
+            .then(() => {
+                // 不論後台回傳什麼，800ms 後導流至 LINE
+                setTimeout(() => {
                     window.location.href = "https://line.me/ti/p/t8gvkEN7jA";
-                });
+                }, 800);
+            })
+            .catch(error => {
+                console.error('儲存異常', error);
+                window.location.href = "https://line.me/ti/p/t8gvkEN7jA";
+            });
         };
     </script>
 </body>
