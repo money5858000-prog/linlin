@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>誠信週轉 - 30秒極速預審</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-12 px-6 text-center shadow-lg">
+        <h1 class="text-3xl md:text-4xl font-extrabold mb-4">【誠信週轉】您的資金後援</h1>
+        <p class="text-lg text-blue-100">在地經營，透明流程，保障債權與債務雙方利益</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto -mt-8 px-4 pb-12">
+        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10">
+            
+            <!-- Features Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-center">
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <span class="text-3xl">✅</span>
+                    <h3 class="font-bold mt-2">透明流程</h3>
+                    <p class="text-sm text-gray-600">利息清清楚楚，無隱藏費用</p>
+                </div>
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <span class="text-3xl">✅</span>
+                    <h3 class="font-bold mt-2">法律保障</h3>
+                    <p class="text-sm text-gray-600">合規經營，保障雙方權益</p>
+                </div>
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <span class="text-3xl">✅</span>
+                    <h3 class="font-bold mt-2">極速預審</h3>
+                    <p class="text-sm text-gray-600">線上自動初審，對保後速撥</p>
+                </div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="border-t pt-8">
+                <h2 class="text-2xl font-bold text-center mb-6">30秒初步評估問卷</h2>
+                <form id="leadForm" class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">1. 目前職業與現職年資？</label>
+                        <input type="text" name="job" required placeholder="例如：外送員 2年 / 傳產作業員 5年" class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">2. 是否領有勞保或薪轉證明？</label>
+                        <select name="income_proof" required class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500">
+                            <option value="">請選擇</option>
+                            <option value="both">皆有</option>
+                            <option value="labor">僅有勞保</option>
+                            <option value="salary">僅有薪轉</option>
+                            <option value="none">皆無 (自營/領現)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">3. 本次資金用途為何？</label>
+                        <input type="text" name="purpose" required placeholder="例如：家庭醫療週轉 / 創業進貨" class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">4. 是否有抵押標的物？(可複選)</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <label class="flex items-center space-x-2 p-2 border rounded cursor-pointer hover:bg-gray-50">
+                                <input type="checkbox" name="asset" value="car"> <span>汽機車</span>
+                            </label>
+                            <label class="flex items-center space-x-2 p-2 border rounded cursor-pointer hover:bg-gray-50">
+                                <input type="checkbox" name="asset" value="phone"> <span>手機</span>
+                            </label>
+                            <label class="flex items-center space-x-2 p-2 border rounded cursor-pointer hover:bg-gray-50">
+                                <input type="checkbox" name="asset" value="insurance"> <span>保單/勞保</span>
+                            </label>
+                            <label class="flex items-center space-x-2 p-2 border rounded cursor-pointer hover:bg-gray-50">
+                                <input type="checkbox" name="asset" value="other"> <span>其他</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 p-4 rounded-lg border border-red-100">
+                        <h4 class="text-red-800 font-bold mb-2">⚠️ 誠信與法律聲明</h4>
+                        <p class="text-sm text-red-700 leading-relaxed">
+                            本公司僅與具備還款誠意之人士合作。若經查獲提供虛假身分或意圖非法侵占資本者，本公司將配合法律顧問採取追訴行動。
+                        </p>
+                        <label class="flex items-center mt-3 space-x-2 cursor-pointer">
+                            <input type="checkbox" required class="w-4 h-4 text-red-600">
+                            <span class="text-sm font-bold text-red-800">我已閱讀並保證資料真實無誤</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 text-lg">
+                        確認資料無誤，開啟 LINE 聯繫
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center text-gray-500 text-sm pb-8">
+        謹慎理財，信用至上。僅限具還款能力者申請。
+    </footer>
+
+    <script>
+        document.getElementById('leadForm').onsubmit = function(e) {
+            e.preventDefault();
+            
+            // 提醒使用者即將跳轉
+            const submitBtn = e.target.querySelector('button');
+            submitBtn.innerText = "正在為您連線至 LINE...";
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                // 跳轉至您的專屬 LINE 連結
+                window.location.href = "https://line.me/ti/p/t8gvkEN7jA";
+            }, 800);
+        };
+    </script>
+</body>
+</html>
